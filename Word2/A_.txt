@@ -1,0 +1,63 @@
+A.	Thực hành
+1.	Luyện các cấu trúc lặp. Hãy viết vòng lặp in ra chuỗi các số chẵn dương không vượt quá n = 100 bằng vòng for, vòng while, vòng do-while bằng càng nhiều cách càng tốt.
+gợi ý các khả năng để kết hợp thành các cách làm khác nhau. Cách nào bạn cho là tốt nhất (theo tiêu chí gọn gàng đơn giản)?.
+a.	dùng con đếm xác định số lần lặp 
+b.	không xác định số lần lặp
+c.	chỉ dùng điều kiện kết thúc của cấu trúc điều khiển, không dùng continue/break
+d.	dùng break
+e.	dùng continue
+#include <iostream>
+	using namespace std;
+	int main()
+	{
+		int n;
+		cout << "nhap vao n khong qua 100: ";
+		cin >> n;
+		if ( n > 100) 
+			{ cout << "nhap lai n: "; 
+			  cin >> n ; 
+			}
+		for ( int i = 1; i<= n; i++)
+		{
+			if ( i > 0 && i % 2 == 0 )
+			{
+				cout << i << " ";
+			}
+		}
+	}
+
+#include <iostream>
+	using namespace std;
+	int main()
+	{
+		int n;
+		int i = 1;
+		cout << "nhap vao n khong qua 100: ";
+		cin >> n;
+		do {
+			if ( i > 0 && i % 2 == 0)
+			{
+				cout << i << " ";
+			}
+			i++;
+		} while ( i <= n && n <= 100);
+	}
+
+2.	Tương tự với bài toán cho một số nguyên k, hãy thực hiện phép tính k = k/3 cho đến khi k nhỏ hơn 3. In ra giá trị cuối cùng của k.
+C1
+#include<iostream>
+	
+
+	using namespace std;
+	
+
+	int main(){
+	    int k;
+	    cin >> k;
+	    if (k<3) cout << k;
+	    else {
+	        while (k>=3)k/=3;
+	        cout << k;
+	    }
+	    return 0;
+	}
