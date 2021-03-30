@@ -2,11 +2,10 @@
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
-#include <algorithm>
 using namespace std;
 int main()
 {
-	srand((unsigned)time(0));
+	srand(time(0));
 	int n = rand()&100 + 1;
 	cout << n << endl;
 	int f[n];

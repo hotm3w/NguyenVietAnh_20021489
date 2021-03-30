@@ -1,21 +1,28 @@
-#include<iostream>
+
+#include<bits/stdc++.h>
 using namespace std;
-int C(int k, int n) {
-    if (k == 0 || k == n) return 1;
-    if (k == 1) return n;
-    return C(k - 1, n - 1) + C(k, n - 1);
+int g(int n){
+	int s=1;
+	if(n==0) return 1;
+	for(int i=1;i<=n;i++){
+		s*=i;
+	}
+	return s;
 }
-int main(){
-    int n;
-    cin >> n;
-    cout << "---------PASCAl---------" << endl;
-    for (int i = 0; i < n; i++) {
-        
-        for (int j = 0; j <= i; j++) {
-            cout << C(j, i) << " ";
-        }
-        cout << endl;
-    }
-    system("pause");
-    return 0;
+void tohop(int n){
+	int c=1;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<=i;j++){
+			c=g(i)/(g(j)*g(i-j));
+			cout<<c<<" ";
+		}
+		cout<<endl;
+	}
+}
+int main()
+{
+	int n;
+	cin>>n;
+	tohop(n);
+        return 0;
 }

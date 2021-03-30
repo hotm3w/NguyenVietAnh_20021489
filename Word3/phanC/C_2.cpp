@@ -1,20 +1,28 @@
-#include<bits/stdc++.h>
+#include<stdio.h>
+#include <iostream>
 using namespace std;
-int main()
-{
-    string s;
-    cin>>s;
-    int i,t=0;
-    int n=s.size();
-    for(i=0;i<n/2;i++)
-    {
-        if(s[i]==s[n-i-1])
-            t=-1;
-        else
-            t=0;
+ 
+int check(int i){
+    int r,sum=0,temp;
+ 
+ 
+    for(temp=i;i!=0;i=i/10){
+         r=i%10;
+         sum=sum*10+r;
     }
-    if(t==-1)
-        cout<<"Yes";
-    else
-        cout<<"No";
+    if(temp==sum)
+         return 1;
+    else 
+    	return 0;
 }
+
+int main(){
+	int dem=0,a,b;
+	cin>>a>>b;
+	for(int i=a;i<=b;i++){
+		if(check(i)==1){
+			++dem;
+		}
+	}
+	cout<<"\n\n"<<dem; 
+} 
